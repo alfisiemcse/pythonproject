@@ -7,7 +7,7 @@ password = getpass.getpass()
 
 tn = telnetlib.Telnet(HOST)
 
-tn.read_until(b"login: ")
+tn.read_until(b"Username: ")
 tn.write(user.encode('ascii') + b"\n")
 if password:
     tn.read_until(b"Password: ")
@@ -19,7 +19,14 @@ tn.write(b"int loopback 0\n"+b"\n")
 tn.write(b"ip address 1.1.1.1 255.255.255.255\n"+b"\n")
 tn.write(b"no shut"+b"\n")
 tn.write(b"end"+b"\n")
+tn.write(b"show run"+b"\n")
+#tn.write(b"end"+b"\n")
+#tn.write(b"end"+b"\n")
+#tn.write(b"end"+b"\n")
 tn.write(b"exit"+b"\n")
-
+output =str(tn.read_all())
+f = open("alfis.txt",'w')
+f.write(output)
+f.close()
 
 print(tn.read_all().decode('ascii'))
