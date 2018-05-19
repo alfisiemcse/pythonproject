@@ -2,6 +2,7 @@
 R1>enable
 Password: 
 R1#
+R1#terminal length 0
 R1#show run
 Building configuration...
 
@@ -27,7 +28,7 @@ ip cef
 !
 !
 no ip domain lookup
- --More--         !
+!
 multilink bundle-name authenticated
 !
 !
@@ -50,10 +51,52 @@ interface Loopback0
  ip address 1.1.1.1 255.255.255.255
 !
 interface Ethernet0/0
- --More--         
-R1# 
-R1# 
-R1# 
+ no ip address
+ shutdown
+ half-duplex
+!
+interface FastEthernet1/0
+ ip address 192.168.122.4 255.255.255.0
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+no cdp log mismatch duplex
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input all
+line vty 5 14
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input all
+!
+!
+end
+
 R1#show ip route
 Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
