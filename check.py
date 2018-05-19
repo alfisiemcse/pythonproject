@@ -6,16 +6,17 @@ import time
 import select
 import paramiko
 import re
-fd = open(r'C:\Users\NewdayTest.txt','w') 
-old_stdout = sys.stdout   
+fd = open(r'alfisnew.txt','w')
+old_stdout = sys.stdout
 sys.stdout = fd
-host = '10.10.10.10'
+host = '192.168.122.4'
 platform = 'cisco_ios'
-username = 'Username'
-password = 'Password'
+username = 'alfis'
+password = 'cisco'
 device = ConnectHandler(device_type=platform, ip=host, username=username, password=password)
 output = device.send_command('terminal length 0')
 output = device.send_command('enable')
+output = device.send_command('cisco')
 print('##############################################################\n')
 print('...................CISCO COMMAND SHOW RUN OUTPUT......................\n')
 output = device.send_command('sh run')
