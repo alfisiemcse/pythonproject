@@ -1,4 +1,4 @@
-import jason
+#import jason
 from napalm import get_network_driver
 from sys import exit
 
@@ -43,8 +43,9 @@ def general_facts():
 	print ('\n'*50)
 	print ('#'*15,' GENERAL INFORMATION ','#'*15,'\n')
 	#print(ios_output)
-	f = open ("test.txt",'w')
-	f.write(str(ios_output))
+	f = open ("test1.txt",'w')
+	for i,j in ios_output.items():
+		f.write(str(i)+" : "+str(j)+"\n")
 	#print(json.dumps(ios_output, indent =5 ))
 	f.close()
 
@@ -52,8 +53,12 @@ def interface_info():
 	ios_output = r3.get_interfaces()
 	print ('\n'*50)
 	print ('#'*15,' INTERFACES ','#'*15,'\n')
-	print(ios_output)
+	#print(ios_output)
+	f = open("test2.txt",'w')
+	for i,j in ios_output.items():
+		f.write(str(i)+" : "+str(j)+"\n")
 	#print(json.dumps(ios_output, indent = 5))
+	f.close()
 
 def mac_address_table():
 	ios_output = r3.get_mac_address_table()

@@ -1,0 +1,2 @@
+Ethernet0/0 : {'speed': 10, 'description': '', 'is_enabled': False, 'last_flapped': -1.0, 'is_up': False, 'mac_address': 'C8:01:07:C9:00:00'}
+FastEthernet1/0 : {'speed': 100, 'description': '', 'is_enabled': True, 'last_flapped': -1.0, 'is_up': True, 'mac_address': 'C8:01:07:C9:00:10'}
