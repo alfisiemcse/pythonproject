@@ -1,0 +1,1 @@
+{'fqdn': 'R1.cisco', 'uptime': 2640, 'vendor': 'Cisco', 'hostname': 'R1', 'os_version': 'C2600 Software (C2600-ADVSECURITYK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)', 'model': '2610', 'interface_list': ['Ethernet0/0', 'FastEthernet1/0'], 'serial_number': 'FTX0945W0MY'}

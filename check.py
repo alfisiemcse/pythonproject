@@ -42,25 +42,32 @@ def general_facts():
 	ios_output = r3.get_facts()
 	print ('\n'*50)
 	print ('#'*15,' GENERAL INFORMATION ','#'*15,'\n')
-	print(json.dumps(ios_output, indent =5 ))
+	#print(ios_output)
+	f = open ("test.txt",'w')
+	f.write(str(ios_output))
+	#print(json.dumps(ios_output, indent =5 ))
+	f.close()
 
 def interface_info():
 	ios_output = r3.get_interfaces()
 	print ('\n'*50)
 	print ('#'*15,' INTERFACES ','#'*15,'\n')
-	print(json.dumps(ios_output, indent = 5))
+	print(ios_output)
+	#print(json.dumps(ios_output, indent = 5))
 
 def mac_address_table():
 	ios_output = r3.get_mac_address_table()
 	print ('\n'*50)
 	print ('#'*15,' MAC ADDRESS TABLE ','#'*15,'\n')
-	print(json.dumps(ios_output, indent = 5))
+	print(ios_output)
+	#print(json.dumps(ios_output, indent = 5))
 
 def arp_table():
 	ios_output = r3.get_arp_table()
 	print ('\n'*50)
 	print ('#'*15,' ARP TABLE ','#'*15,'\n')
-	print(json.dumps(ios_output, indent = 5))
+	print(ios_output)
+	#print(json.dumps(ios_output, indent = 5))
 
 
 
