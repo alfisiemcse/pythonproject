@@ -92,21 +92,13 @@ def snmpinformation():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
-def users():
-	ios_output = r3.get_users()
-	f = open ("test7.txt",'w')
-	for i,j in ios_output.items():
-		f.write(str(i)+" : "+str(j)+"\n")
-	f.close()
-
 def getconfig():
 	ios_output = r3.get_config()
-	f = open("test11.txt",'w')
+	f = open("test7.txt",'w')
 	for i,j in ios_output.items():
 		f.write(str(i)+" : "+str(j))
 	f.close()
 
-users()
 snmpinformation()
 ipv6neighbour()
 interface_ip()

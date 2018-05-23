@@ -1,4 +1,4 @@
-community : {}
-contact : unknown
 location : unknown
+contact : unknown
 chassis_id : %SNMP agent not enabled
+community : {}
