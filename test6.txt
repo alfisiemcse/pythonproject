@@ -1,0 +1,5 @@
+fans : {'invalid': {'status': True}}
+cpu : {0: {'%usage': 20.0}}
+temperature : {'invalid': {'is_alert': False, 'is_critical': False, 'temperature': -1.0}}
+power : {'invalid': {'status': True, 'output': -1.0, 'capacity': -1.0}}
+memory : {'available_ram': 113275588, 'used_ram': 13799760}

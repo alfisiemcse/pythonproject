@@ -2,10 +2,10 @@
 from napalm import get_network_driver
 from sys import exit
 
-host_ip = input("Please enter your host device's IP : ")
-user_name = input ("Please enter your host device's USERNAME : ")
-pass_word = input("Please enter your PASSWORD : ")
-secret_pass = input("Please enter your enable PASSWORD : ")
+host_ip = input(" IP : ")
+user_name = input ("USERNAME : ")
+pass_word = input("PASSWORD : ")
+secret_pass = input("SECRET PASSWORD : ")
 
 driver = get_network_driver('ios')
 optional_argument = {'secret' : secret_pass}
@@ -30,34 +30,39 @@ def interface_info():
 def mac_address_table():
 	ios_output = r3.get_mac_address_table()
 	f = open ("test3.txt",'w')
-	for i,j in ios_output.items():
+	l = {}
+	z= len(ios_output)
+	for i in range(z):
+		l.update(ios_output[i])
+	for i,j in l.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
 def arp_table():
 	ios_output = r3.get_arp_table()
 	f = open ("test4.txt",'w')
-	for i,j in ios_output.items():
+	l = {}
+	z= len(ios_output)
+	for i in range(z):
+		l.update(ios_output[i])
+	for i,j in l.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
 def lldp_neighbors():
 	ios_output = r3.get_lldp_neighbors()
 	f = open ("test5.txt",'w')
-	for i,j in ios_output.items():
+	l = {}
+	z= len(ios_output)
+	for i in range(z):
+		l.update(ios_output[i])
+	for i,j in l.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
 def enivonment():
 	ios_output = r3.get_environment()
 	f = open ("test6.txt",'w')
-	for i,j in ios_output.items():
-		f.write(str(i)+" : "+str(j)+"\n")
-	f.close()
-
-def firewallpolicies():
-	ios_output = r3.get_firewall_policies()
-	f = open ("test7.txt",'w')
 	for i,j in ios_output.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
@@ -72,7 +77,11 @@ def interface_ip():
 def ipv6neighbour():
 	ios_output = r3.get_ipv6_neighbors_table()
 	f = open ("test9.txt",'w')
-	for i,j in ios_output.items():
+	l = {}
+	z= len(ios_output)
+	for i in range(z):
+		l.update(ios_output[i])
+	for i,j in l.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
@@ -94,9 +103,9 @@ users()
 snmpinformation()
 ipv6neighbour()
 interface_ip()
-firewallpolicies()
 enivonment()
 lldp_neighbors()
 arp_table()
 mac_address_table()
 general_facts()
+
