@@ -1,5 +1,5 @@
-memory : {'available_ram': 113275588, 'used_ram': 13822980}
-cpu : {0: {'%usage': 31.0}}
+memory : {'used_ram': 13823308, 'available_ram': 113275588}
 fans : {'invalid': {'status': True}}
-temperature : {'invalid': {'is_alert': False, 'is_critical': False, 'temperature': -1.0}}
-power : {'invalid': {'capacity': -1.0, 'output': -1.0, 'status': True}}
+temperature : {'invalid': {'is_critical': False, 'is_alert': False, 'temperature': -1.0}}
+power : {'invalid': {'capacity': -1.0, 'status': True, 'output': -1.0}}
+cpu : {0: {'%usage': 32.0}}

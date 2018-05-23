@@ -99,6 +99,13 @@ def users():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
 
+def getconfig():
+	ios_output = r3.get_config()
+	f = open("test11.txt",'w')
+	for i,j in ios_output.items():
+		f.write(str(i)+" : "+str(j))
+	f.close()
+
 users()
 snmpinformation()
 ipv6neighbour()
@@ -108,4 +115,5 @@ lldp_neighbors()
 arp_table()
 mac_address_table()
 general_facts()
+getconfig()
 
