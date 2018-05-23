@@ -1,8 +1,8 @@
+model : 2610
+fqdn : R1.alfis.com
+uptime : 10620
 os_version : C2600 Software (C2600-ADVSECURITYK9-M), Version 12.4(15)T14, RELEASE SOFTWARE (fc2)
-hostname : R1
 vendor : Cisco
 interface_list : ['Ethernet0/0', 'FastEthernet1/0']
-model : 2610
-uptime : 9900
-fqdn : R1.alfis.com
+hostname : R1
 serial_number : FTX0945W0MY

@@ -94,7 +94,7 @@ def snmpinformation():
 
 def users():
 	ios_output = r3.get_users()
-	f = open ("test4.txt",'w')
+	f = open ("test7.txt",'w')
 	for i,j in ios_output.items():
 		f.write(str(i)+" : "+str(j)+"\n")
 	f.close()
